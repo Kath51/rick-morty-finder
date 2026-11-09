@@ -1,0 +1,33 @@
+/* css/estilos.css — Estilos propios del Portal Finder */
+
+body {
+  background: radial-gradient(circle at top, #1b2a1f 0%, #0d1117 70%);
+  min-height: 100vh;
+}
+
+h1 {
+  color: #97ce4c;
+  text-shadow: 0 0 12px rgba(151, 206, 76, 0.5);
+}
+
+/* Tarjetas con efecto al pasar el mouse */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(151, 206, 76, 0.35);
+}
+
+.card-img-top {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Controles */
+.form-control:focus,
+.form-select:focus {
+  border-color: #97ce4c;
+  box-shadow: 0 0 0 0.2rem rgba(151, 206, 76, 0.25);
+}
