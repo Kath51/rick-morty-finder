@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rick & Morty Portal Finder</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <main class="container py-4">
+    <h1 class="mb-4">🛸 Rick &amp; Morty Portal Finder</h1>
+
+    <!-- Controles -->
+    <div class="row g-2 mb-3">
+      <div class="col-12 col-md-6">
+        <input id="input-busqueda" type="text" class="form-control" placeholder="Buscar por nombre">
+      </div>
+      <div class="col-6 col-md-3">
+        <select id="select-estado" class="form-select">
+          <option value="todos">Todos los estados</option>
+          <option value="Alive">Alive</option>
+          <option value="Dead">Dead</option>
+          <option value="unknown">unknown</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-3">
+        <button id="btn-cargar" class="btn btn-success w-100">↻ Recargar datos</button>
+      </div>
+    </div>
+
+    <!-- Salida de prueba (Parte 3) -->
+    <p id="salida-simple" class="text-info"></p>
+
+    <!-- Paginación -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <button id="btn-anterior" class="btn btn-outline-light">← Anterior</button>
+      <span id="indicador-pagina">Página 1 de 1</span>
+      <button id="btn-siguiente" class="btn btn-outline-light">Siguiente →</button>
+    </div>
+
+    <!-- Resumen y favoritos -->
+    <div class="d-flex justify-content-between mb-3">
+      <span id="resumen"></span>
+      <span id="contador-favoritos">⭐ Favoritos: 0</span>
+    </div>
+
+    <!-- Estado: cargando -->
+    <div id="loading" class="text-center py-5 d-none">
+      <div class="spinner-border text-success" role="status"></div>
+      <p class="mt-2">Abriendo portal...</p>
+    </div>
+
+    <!-- Estado: error -->
+    <div id="alerta-error" class="alert alert-danger d-none" role="alert">
+      <p id="error-mensaje" class="mb-2"></p>
+      <button id="btn-reintentar" class="btn btn-sm btn-light">Reintentar</button>
+    </div>
+
+    <!-- Tarjetas -->
+    <div id="contenedor-tarjetas" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3"></div>
+  </main>
+
+  <!-- Modal de ficha -->
+  <div class="modal fade" id="modal-detalle" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modal-nombre"></h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="modal-cuerpo"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
